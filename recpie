@@ -1,0 +1,144 @@
+#include <iostream>
+using namespace std;
+GLOBAL STATIC NO_OF_recepie=0
+class recepie_object {
+
+	int index;	
+	string recepie_name;
+	string recepie_ingridients[100];
+	string recepie_procedure[10];
+	int quit=1;
+	
+	public:
+		int new_recepie(int k){
+	
+		
+				cout << "Enter recpie number:\n " <<endl;
+		
+					       getline (cin, index);		
+
+				cout << "Enter name of recpie :\n " <<endl;
+		
+					       getline (cin, recepie_name);
+
+				cout << "Enter ingridients of recpie, to quit give 0 :\n " <<endl;
+		
+						int ingridient_no=0;	
+						 
+						while(quit!=0){	
+			
+							getline (cin,recepie_ingridients[ingridient_no]); 
+							ingridient_no++;
+							cout << "Still continue?\n " <<endl;  
+							getline (cin,quit);      
+		
+
+						}
+						quit=1;
+
+				cout << "Enter procedure of recpie : " <<endl;
+
+						int step_no=0;	
+						 cout << "Enter procedures of recpie, to quit give 0 :\n " <<endl;
+						while(quit!=0){	
+			
+							getline (cin,recepie_procedure[step_no]); 
+							step_no++;
+							cout << "Still continue?\n " <<endl;  
+							getline (cin,quit);      
+		
+
+						}
+			NO_OF_recepie++;
+
+		}
+		recepie_object edit_recepie(recepie_object k){
+	
+		
+				cout << "Enter name of recpie :\n " <<endl;
+		
+					       getline (cin, k.recepie_name());
+
+				cout << "Enter ingridients of recpie, to quit give 0 :\n " <<endl;
+		
+						int ingridient_no=0;	
+						k.recepie_object=NULL;
+						while(quit!=0){	
+			
+							getline (cin,k.recepie_ingridients[ingridient_no]); 
+							ingridient_no++;
+							cout << "Still continue?\n " <<endl;  
+							getline (cin,quit);      
+		
+
+						}
+						quit=1;
+
+				cout << "Enter procedure of recpie : " <<endl;
+						k.recepie_procedure=NULL;
+						int step_no=0;	
+						 cout << "Enter procedures of recpie, to quit give 0 :\n " <<endl;
+						while(quit!=0){	
+			
+							getline (cin,k.recepie_procedure[step_no]); 
+							step_no++;
+							cout << "Still continue?\n " <<endl;  
+							getline (cin,quit);      
+		
+
+						}
+
+		}
+	int print_recepie(int k){
+	
+	cout << "Enter procedures of recpie, to quit give 0 :\n " <<endl;
+
+
+	}
+
+}
+
+int main {
+
+
+	int inputc;
+
+	recepie_object master_list[100];
+	cout << "To view recepies press 1 \n To add recpies press 2\n To edit recepie press 3\n: " <<endl;	
+	cin >> inputc;
+	switch(
+
+		case(1):
+		  print_recepie(NO_OF_recepie);
+
+		case(2):
+	
+		  master_list(NO_OF_recepie).new_recepie();
+
+	
+		cae(3):
+			cout << "Enter recepie no." <<endl;
+			int editno;
+			cin >> editno;
+			master_list(editno)=master_list(editno).edit_recepie(master_list(editno));
+
+		default:
+
+		     cout << "Wrong input\n: " <<endl;	
+	
+	)
+
+	void print_recepie(int k){
+
+	
+	int j;
+	for(j=0;j<k;j++){
+	cout << j <<endl;
+	cout << master_list[j].recepie_name() <<endl;
+	
+	}
+
+	
+	
+}
+	
