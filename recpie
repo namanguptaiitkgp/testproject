@@ -1,33 +1,35 @@
 #include <iostream>
+#include <string>
 using namespace std;
-GLOBAL STATIC NO_OF_recepie=0
-class recepie_object {
+static int NO_OF_recipe=0;
+class recipe_object {
 
 	int index;	
-	string recepie_name;
-	string recepie_ingridients[100];
-	string recepie_procedure[10];
+	string recipe_name;
+	string recipe_ingridients[100];
+	string recipe_procedure[10];
 	int quit=1;
 	
 	public:
 		int new_recepie(int k){
 	
 		
-				cout << "Enter recpie number:\n " <<endl;
+				cout << "Recipe number:\n " << NO_OF_recepie << endl;
 		
-					       getline (cin, index);		
+					       index=NO_OF_recipe;		
+					       NO_OF_recepie++;
 
-				cout << "Enter name of recpie :\n " <<endl;
+				cout << "Enter name of recipe :\n " <<endl;
 		
-					       getline (cin, recepie_name);
+					       getline (cin, recipe_name);
 
-				cout << "Enter ingridients of recpie, to quit give 0 :\n " <<endl;
+				cout << "Enter ingridients of recipe, to quit give 0 :\n " <<endl;
 		
 						int ingridient_no=0;	
 						 
 						while(quit!=0){	
 			
-							getline (cin,recepie_ingridients[ingridient_no]); 
+							getline (cin,recipe_ingridients[ingridient_no]); 
 							ingridient_no++;
 							cout << "Still continue?\n " <<endl;  
 							getline (cin,quit);      
@@ -36,36 +38,36 @@ class recepie_object {
 						}
 						quit=1;
 
-				cout << "Enter procedure of recpie : " <<endl;
+				cout << "Enter procedure of reipe : " <<endl;
 
 						int step_no=0;	
-						 cout << "Enter procedures of recpie, to quit give 0 :\n " <<endl;
+						 cout << "Enter procedures of recipe, to quit give 0 :\n " <<endl;
 						while(quit!=0){	
 			
-							getline (cin,recepie_procedure[step_no]); 
+							getline (cin,recipe_procedure[step_no]); 
 							step_no++;
 							cout << "Still continue?\n " <<endl;  
 							getline (cin,quit);      
 		
 
 						}
-			NO_OF_recepie++;
+	
 
 		}
-		recepie_object edit_recepie(recepie_object k){
+		recepie_object edit_recepie(recipe_object k){
 	
 		
-				cout << "Enter name of recpie :\n " <<endl;
+				cout << "Enter new name of recpie :\n " <<endl;
 		
-					       getline (cin, k.recepie_name());
+					       getline (cin, k.recipe_name());
 
-				cout << "Enter ingridients of recpie, to quit give 0 :\n " <<endl;
+				cout << "Enter new ingridients of recpie, to quit give 0 :\n " <<endl;
 		
 						int ingridient_no=0;	
-						k.recepie_object=NULL;
+						k.recipe_object=NULL;
 						while(quit!=0){	
 			
-							getline (cin,k.recepie_ingridients[ingridient_no]); 
+							getline (cin,k.recipe_ingridients[ingridient_no]); 
 							ingridient_no++;
 							cout << "Still continue?\n " <<endl;  
 							getline (cin,quit);      
@@ -74,13 +76,13 @@ class recepie_object {
 						}
 						quit=1;
 
-				cout << "Enter procedure of recpie : " <<endl;
+				cout << "Enter new procedure of recipe : " <<endl;
 						k.recepie_procedure=NULL;
 						int step_no=0;	
-						 cout << "Enter procedures of recpie, to quit give 0 :\n " <<endl;
+						 cout << "Enter procedures of recipe, to quit give 0 :\n " <<endl;
 						while(quit!=0){	
 			
-							getline (cin,k.recepie_procedure[step_no]); 
+							getline (cin,k.recipe_procedure[step_no]); 
 							step_no++;
 							cout << "Still continue?\n " <<endl;  
 							getline (cin,quit);      
@@ -89,38 +91,41 @@ class recepie_object {
 						}
 
 		}
-	int print_recepie(int k){
+	void print_recepie(int k,recipe_object master_list[100]]){
 	
-	cout << "Enter procedures of recpie, to quit give 0 :\n " <<endl;
+	int j;
+	for(j=0;j<k;j++){
+	cout << j <<endl;
+	cout << master_list[j].recipe_name() <<endl;
 
 
 	}
 
 }
 
-int main {
+int recipe_manager_main {
 
 
 	int inputc;
 
 	recepie_object master_list[100];
-	cout << "To view recepies press 1 \n To add recpies press 2\n To edit recepie press 3\n: " <<endl;	
+	cout << "To view recipes press 1 \n To add recipes press 2\n To edit recipe press 3\n: " <<endl;	
 	cin >> inputc;
 	switch(
 
-		case(1):
-		  print_recepie(NO_OF_recepie);
+		case 1:
+		  print_recepie(NO_OF_recipe,master_list);
 
-		case(2):
+		case 2:
 	
-		  master_list(NO_OF_recepie).new_recepie();
+		  master_list(NO_OF_recipe).new_recipe();
 
 	
-		cae(3):
-			cout << "Enter recepie no." <<endl;
+		case 3:
+			cout << "Enter recipe no." <<endl;
 			int editno;
 			cin >> editno;
-			master_list(editno)=master_list(editno).edit_recepie(master_list(editno));
+			master_list(editno)=master_list(editno).edit_recipe(master_list(editno));
 
 		default:
 
@@ -128,15 +133,7 @@ int main {
 	
 	)
 
-	void print_recepie(int k){
 
-	
-	int j;
-	for(j=0;j<k;j++){
-	cout << j <<endl;
-	cout << master_list[j].recepie_name() <<endl;
-	
-	}
 
 	
 	
