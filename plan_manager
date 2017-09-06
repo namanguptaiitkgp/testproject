@@ -1,0 +1,108 @@
+#include <iostream>
+#include <string>
+using namespace std;
+static int NO_OF_plan=0;
+class plan_object {
+
+	int index;	
+ 	int dd,mm,yyyy;
+ 	char slash;
+ 	int breakfast,lunch,dinner;
+	int quit=1;
+	
+	public:
+		int new_plan(int k){
+	
+		
+				cout << "Plan number:\n " << NO_OF_recepie << endl;
+		
+					       index=NO_OF_recipe;		
+					       NO_OF_recepie++;
+
+				cout << "Enter date (dd/mm/yyyy):\n " <<endl;
+		
+					       cin >> dd >> slash_dummy >> mm >> slash_dummy >> yyyy ;;
+
+				cout << "Enter recipe no. for breakfast:\n " <<endl;
+		
+						cin >> breakfast;
+
+				cout << "Enter recipe no. for lunch:\n " <<endl;
+		
+						cin >> lunch; 
+
+				cout << "Enter recipe no. for dinner:\n " <<endl;
+		
+						cin >> dinner;  
+
+			
+	
+
+		}
+		rplan_object edit_recepie(plan_object k){
+	
+		
+					cout << "Enter recipe no. for breakfast:\n " <<endl;
+		
+						cin >> breakfast;
+
+				cout << "Enter recipe no. for lunch:\n " <<endl;
+		
+						cin >> lunch; 
+
+				cout << "Enter recipe no. for dinner:\n " <<endl;
+		
+						cin >> dinner;  
+
+		}
+	void print_recepie(int k,plan_object master_list[100]]){
+	
+	int j;
+	for(j=0;j<k;j++){
+	cout << j <<endl;
+	cout << master_list[j].dd() <<'/' <<master_list[j].mm() << '/' << master_list[j].yyyy()<<endl;
+	cout << "Breakfast" <<recipe[master_list[j].breakfast].recipe_name();
+	cout <<  "Lunch" << recipe[master_list[j].lunch].recipe_name();
+	cout <<  "Dinner" << recipe[master_list[j].dinner].recipe_name();
+
+
+	}
+
+}
+
+int plan_manager_main {
+
+
+	int inputc;
+
+	recepie_object master_list[100];
+	cout << "To view plans press 1 \n To add plans press 2\n To edit plan press 3\n: " <<endl;	
+	cin >> inputc;
+	switch(
+
+		case 1:
+		  print_recepie(NO_OF_plan,master_list);
+
+		case 2:
+	
+		  master_list(NO_OF_plan).new_plan();
+
+	
+		case 3:
+			cout << "Enter plan no." <<endl;
+			int editno;
+			cin >> editno;
+			master_list(editno)=master_list(editno).edit_recipe(master_list(editno));
+
+		default:
+
+		     cout << "Wrong input\n: " <<endl;	
+	
+	)
+
+
+
+	
+	
+}
+	
